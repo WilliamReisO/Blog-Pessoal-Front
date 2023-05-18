@@ -1,0 +1,44 @@
+.imag-cadastro{
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/498918170031597.64572daf1b65d.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100vh;
+}
+.texto2{
+    font-weight:bold !important;
+    color: #f77f00;
+    margin-bottom: 10px;
+}
+.button-01 {
+    margin-top: 10px !important;
+    background: linear-gradient(275deg, hsl(40, 97%, 64%) 8%, #f77f00 89%);
+  }
+  
+  .button-01:hover {
+    background: linear-gradient(275deg, #d4a139 8%, #f77f00 89%);
+  }
+  .button-02 {
+    margin-top: 20px !important;
+
+    background: linear-gradient(275deg, hsl(40, 97%, 64%) 8%, #f77f00 89%);
+  }
+  
+  .button-02:hover {
+    background: linear-gradient(275deg, #d4a139 8%, #f77f00 89%);
+  }
+  .EstiloFom{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f77f00 ;
+    width: 300px;
+    box-shadow: #f77f00;
+  }
+  .formato{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 10px;
+  }
+  

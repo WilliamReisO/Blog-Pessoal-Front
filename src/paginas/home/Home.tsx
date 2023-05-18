@@ -23,7 +23,7 @@ function Home() {
                     </Button>
                 </Box>
             </Grid>
-            <Grid item xs={6} className='contained'>
+            <Grid item xs={6} className='imag-home'>
                 
             </Grid>
             <Grid xs={12} style={{ backgroundColor: "white" }}>

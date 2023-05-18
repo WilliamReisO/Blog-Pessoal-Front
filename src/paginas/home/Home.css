@@ -16,7 +16,7 @@
   background-color: #fcbf49; 
   color: white ;
 }
-.contained{
+.imag-home{
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/498918170031597.64572daf1b65d.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,4 +25,5 @@
   height: 500px;
   border-radius: 20px;
   margin-right: 10px;
+  box-shadow: #fcbf49;
 }
