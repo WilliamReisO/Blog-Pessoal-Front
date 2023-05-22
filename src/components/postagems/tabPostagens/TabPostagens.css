@@ -1,0 +1,25 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+.tab-style{
+    position:static !important;
+    width: 100% !important;
+}
+.labol-01{
+    display:flex;
+    flex-Wrap: wrap;
+    justify-Content:center;
+    width: 1225px !important;
+}
+
+.titulo-sobre{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: -20px !important;
+    margin-bottom: 30px !important;
+}
+.text-sobre{
+    text-align: center;
+    font-size: 2rem;
+    
+}

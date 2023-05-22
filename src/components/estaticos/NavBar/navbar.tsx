@@ -9,21 +9,18 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
-        <>
-            <AppBar position="static" className='navbar' style={{backgroundColor :'orange'}}>
+     
+            <AppBar className='navbar'>
                 <Toolbar variant="dense">
-                    <Grid container spacing={2} justifyContent={'space-between'}>
-                        <Box style={{ cursor: "pointer" }} >
-                            
-                            <Typography variant="h4" color="inherit">
-                                <Link to="/login" >
-                                  <Button variant='outlined' className='outlinedButton'> Blog Pessoal </Button>
-                                </Link>
+                    
+                    <Grid container  className='nav-estrutura'>
+                        <img src="/public/blogging.png" alt="icon do blog" />
+                        <Box>
+                            <Typography variant="h4" className='titulo-blog'>
+                                  Portifolio 
                             </Typography>
                         </Box>
-
-
-                        <Box display="flex" justifyContent='space-arounde' >
+                        <Box className='menu-nav' >
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" color="inherit">
                                     <Link to="/home" >
@@ -33,21 +30,21 @@ function Navbar() {
                             </Box>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" color="inherit">
-                                    <Link to="/Postagens">
+                                    <Link to="/postagens">
                                         <Button variant='outlined' className='outlinedButton'> Postagens </Button>
                                     </Link>
                                 </Typography>
                             </Box>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" color="inherit">
-                                    <Link to="/Temas">
+                                    <Link to="/temas">
                                         <Button variant='outlined' className='outlinedButton'> Temas </Button>
                                     </Link>
                                 </Typography>
                             </Box>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" color="inherit" marginRight={1}>
-                                    <Link to="/Cadastrar">
+                                    <Link to="/cadastrar">
                                     <Button variant='outlined' className='outlinedButton'>Cadastrar Tema</Button>
                                     </Link>
                                 </Typography>
@@ -63,7 +60,7 @@ function Navbar() {
                     </Grid>
                 </Toolbar>
             </AppBar>
-        </>
+        
     )
 }
 export default Navbar;

@@ -1,0 +1,14 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+.card-temas{
+border-radius: 50px !important;
+background-image: linear-gradient(93deg, #e9e8e5be 8%, #a8c5ed9f 89%);
+padding: 2rem;
+width: 300px;
+box-shadow: 2px 5px 20px #b9c0f7;
+margin-top: 90px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}

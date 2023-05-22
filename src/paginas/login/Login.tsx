@@ -56,37 +56,38 @@ function Login() {
    
   <Grid
     container
-    alignItems={'center'}
-    justifyContent={'center'}
-    style={{ minHeight:'100vh',width:'1200px', backgroundColor: "#fcbf49" }} 
-    className='contained'
+    className='login'
     >
     <Box className="card">
       <form className="form" onSubmit={enviar} >
-        <Typography variant="h3" align="center" textTransform={'uppercase'} className="form-title" color='#fff'>
-          Login
+        <Typography variant="h3" align="center" textTransform={'uppercase'} className="form-text">
+          Entrar
         </Typography>
         <Box className="form-input">
-          <TextField value ={usuarioLogin.usuario} onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)}  id ='usuario'variant="standard" label="Nome de Usuario" fullWidth />
+          <TextField value={usuarioLogin.usuario} onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)}  id='usuario' variant="standard" name='usuario' label="Nome de Usuario" fullWidth />
         </Box>
         <Box className="form-input">
-          <TextField  value ={usuarioLogin.senha} onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} id ='senha' variant="standard" label="Senha" type='password' fullWidth />
+          <TextField  value ={usuarioLogin.senha} onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} id ='senha' variant="standard" name='senha' label="Senha" type='password' fullWidth />
         </Box>
-        <Button variant='contained' fullWidth className='button' type='submit'>
+        <Link to={'/home'}>
+        <Button variant='contained' fullWidth className='button'>
           Logar
         </Button>
+        </Link>
        <Box display={'flex'} justifyContent={'center'} marginTop={2}>
         <Typography variant = 'subtitle1' gutterBottom align='center'>
           Não tem uma conta ?
         </Typography>
-        <Typography variant='subtitle2' gutterBottom align='center' style={{fontWeight: 'bold'}}>
+        <Typography variant='subtitle2' gutterBottom className='text-cadastro'>
           <Link to="/cadastroUsuario">Cadastre-se</Link>
         </Typography>
       </Box>
       </form>
     </Box>
-    <Grid xs={5} className=''>
+    <Grid item xs={5} className='gradient-login'>
+
     </Grid>
+   
   </Grid>
 );
 }

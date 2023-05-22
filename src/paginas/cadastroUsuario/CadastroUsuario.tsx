@@ -82,27 +82,26 @@ function CadastroUsuario() {
           justifyContent='center'
           alignItems='center'
           >
-      <Grid item xs={6} className='imag-cadastro'></Grid>
-      <Grid item xs={6} alignItems='center' >
         <Box>
           <form className='EstiloFom' onSubmit={cadastrar}>
             <Typography variant="h4" align="center" textTransform={'uppercase'} className="texto2"  >
               Cadastrar
             </Typography>
             <Box className="formato">
-              <TextField value={usuario.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='foto' label="foto" name='foto' variant="outlined" type='image' fullWidth />
+              <TextField value={usuario.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='foto' label="Foto" name='foto' variant="outlined"  fullWidth />
             </Box >
             <Box className="formato">
               <TextField value={usuario.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='nome' label="Nome" variant="outlined" name='nome' fullWidth />
             </Box>
             <Box className="formato">
-              <TextField value={usuario.senha} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='senha' label="Senha" name='senha' variant="outlined" type='password' fullWidth />
-            </Box >
-            <Box className="formato">
               <TextField value={usuario.usuario} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='usuario' label="Usuario" name='usuario' variant="outlined" fullWidth />
             </Box >
             <Box className="formato">
-              <TextField value={confirmarSenha} onChange={(event: ChangeEvent<HTMLInputElement>) => confirmaSenha(event)} id='confirmarSenha' label="Confirmar Senha" name='confirmar senha' variant="outlined" fullWidth />
+              <TextField value={usuario.senha} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='senha' label="Senha" name='senha' variant="outlined" type='password' fullWidth />
+            </Box >
+
+            <Box className="formato">
+              <TextField value={confirmarSenha} onChange={(event: ChangeEvent<HTMLInputElement>) => confirmaSenha(event)} id='confirmarSenha' label="Confirmar Senha" name='confirmar senha' type='password' variant="outlined" fullWidth />
             </Box >
               <Button variant='contained' fullWidth className='button-01' onClick={voltar}>
                 Cancelar
@@ -113,8 +112,9 @@ function CadastroUsuario() {
 
           </form>
         </Box>
+        <Grid item xs={5} className='gradient-cadastro'></Grid>
       </Grid>
-    </Grid>
+
   )
 }
 

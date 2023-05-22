@@ -1,23 +1,29 @@
 .titulo{
-  color: blue;
+  color:#628fe2ec;
   text-align: center;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace !important;
+  
 }
-
 .gridconf{
   direction:row ;
   justify-content: center;
   align-items:center;
-  background-color: #fcbf49;
-  min-height:100vh; 
+  min-height:100vh;
 }
-.button{
-  variant:outlined;
-  border-color: white;
-  background-color: #fcbf49; 
-  color: white ;
+.gradient-home {
+  --size: 400px;
+  --speed: 10s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 9));
+  background-image: linear-gradient(rgba(55, 235, 169, 0.85) , #5b37eb );
+  animation: rotate var(--speed) var(--easing) infinite alternate;
+  border-radius: 70% 80% 70% 50%/30% 50% 40% 90%;
 }
 .imag-home{
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/498918170031597.64572daf1b65d.png");
+  background-image: url("https://wallpapercave.com/wp/wp4676582.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,5 +31,5 @@
   height: 500px;
   border-radius: 20px;
   margin-right: 10px;
-  box-shadow: #fcbf49;
+  box-shadow: 1px 3px 50px #628fe29c;
 }

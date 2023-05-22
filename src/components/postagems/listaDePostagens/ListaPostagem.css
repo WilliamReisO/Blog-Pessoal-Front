@@ -1,0 +1,39 @@
+/*Edição de estilo da classe Lista postagem seguindo o padrão do site*/
+.card-Decoration{
+    border-radius: 50px !important;
+    background-image: linear-gradient(93deg, #e9e8e5be 8%, #a8c5ed9f 89%);
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 2px 5px 20px #b9c0f7;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-family: 'Courier New', Courier, monospace !important;
+    margin-bottom: 10px !important;
+    text-align: center;
+}
+.text-decoration{
+   font-family: 'Courier New', Courier, monospace !important;
+}
+
+/*Aqui é onde organizo a posição e tamanho do botão*/
+.button-position{
+    display:flex;
+    justify-content:space-between;
+    margin:auto;
+    width: 250px;
+}
+#atua{
+    width: 100px;
+    background-color: #0081a7;
+    color: whitesmoke;
+    ;
+}
+#dele{
+    background-color: #de584e;
+    width: 100px;
+    color: whitesmoke;
+}

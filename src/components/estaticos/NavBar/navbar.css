@@ -1,20 +1,36 @@
-
   .outlinedButton {
-    border-color: #fff !important;
-    color: #fff !important;
+    border-color:#7ca6c06d !important;
+    color: #ffffffb4 !important;
+    background-color: #7ca6c06d !important;
+    padding: 10px!important;
   }
   .outlinedButton:hover {
-    border-color: #fff !important;
-    color: #f77f00 !important;
-    background-color: #fff !important;
-  }
-  navbar{
-    background-color: #f77f00;
-  }
+  border-color:#7ca6c06d !important;
+  color: #ffffffb4 !important;
+  background-color: #7ca6c06d !important;
+ }
   .cursor{
     cursor: pointer;
   }
-  .button{
-
+  img{
+    width: 40px;
+    margin-right: 20px;
   }
+  .titulo-blog{
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
+
+    margin-right: 400px !important;
+  }
+.navbar{
+  position: absolute!important;
+}
+.nav-estrutura{
+  justify-content:flex-end;
+}
+.menu-nav{
+  display:flex;
+  justify-content:space-between;
+}
  
