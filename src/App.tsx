@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/estaticos/NavBar/navbar';
-import Footer from './components/estaticos/Footer/footer';
+import Navbar from './components/estaticos/navBar/NavBar';
+import Footer from './components/estaticos/footer/Footer';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';

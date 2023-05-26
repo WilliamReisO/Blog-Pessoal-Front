@@ -1,6 +1,6 @@
 import { Grid , Box , Button, Typography, Toolbar, AppBar } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom';
-import './navbar.css';
+import './NavBar.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/action';
