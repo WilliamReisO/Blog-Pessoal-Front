@@ -1,4 +1,4 @@
- interface UsuarioLogin{
+interface UsuarioLogin{
     id:number; 
     foto:string;
     nome:string; 
@@ -7,3 +7,4 @@
     token:string|null
 }
 export default UsuarioLogin;
+

@@ -6,26 +6,26 @@
 }
 .button-01 {
     margin-top: 10px !important;
-    background: linear-gradient(275deg, #b8b7b5d1 8%, #a8c5ed9f 89%);
+    background: #18586fda !important;
   }
   .button-01:hover {
-    background: linear-gradient(275deg, #b8b7b5d1 8%, #a8c5ed9f 89%);
+    background: #286980da !important;
   }
   .button-02 {
     margin-top: 20px !important;
-    background: linear-gradient(275deg, #b8b7b5d1 8%, #a8c5ed9f 89%);
+    background: #18586fda !important;
   }
   
   .button-02:hover {
-    background: linear-gradient(275deg, #b8b7b5d1 8%, #a8c5ed9f 89%);
+    background:#457688da !important;
   }
+  
   .EstiloFom{
   border-radius: 50px;
-  background-image: linear-gradient(93deg, #fffffff1 8%, #a8c5ed9f 89%);
+  background:#a8c5ed5a;
   padding: 2rem;
   width: 400px;
   box-shadow: 2px 5px 20px #b9c0f7;
-  margin-right: 200px;
   margin-top: 40px;
     
   }
@@ -34,6 +34,13 @@
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 10px;
+ 
+  }
+  .formato-card{
+    direction:row; 
+    justify-content: center;
+    align-items:center;
+    margin-left:250px;
   }
   .gradient-cadastro{
     --size: 400px;

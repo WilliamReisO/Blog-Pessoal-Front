@@ -1,9 +1,9 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import { ChangeEvent, useEffect, useState } from 'react';
-import './CadastroUsuario.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
-import { cadastrarUsuario } from '../../services/Service';
+import { cadastrarUsuario } from '../../service/Service';
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
   // constante para efetuar a navegação do usuário por dentro da lógica
@@ -78,9 +78,7 @@ function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction='row' 
-          justifyContent='center'
-          alignItems='center'
+    <Grid container className='formato-card'
           >
         <Box>
           <form className='EstiloFom' onSubmit={cadastrar}>
@@ -106,13 +104,13 @@ function CadastroUsuario() {
               <Button variant='contained' fullWidth className='button-01' onClick={voltar}>
                 Cancelar
               </Button>
+            <Link to = '/login'>
             <Button variant='contained' fullWidth className='button-02' type='submit'>
               Cadastrar
             </Button>
-
+            </Link>
           </form>
         </Box>
-        <Grid item xs={5} className='gradient-cadastro'></Grid>
       </Grid>
 
   )

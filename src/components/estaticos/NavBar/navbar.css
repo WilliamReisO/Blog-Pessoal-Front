@@ -20,17 +20,17 @@
     color: whitesmoke;
     font-size: 16px;
     font-weight: bold;
-
-    margin-right: 400px !important;
+    margin-right: 400px ;
   }
 .navbar{
-  position: absolute!important;
+  position:relative;
 }
-.nav-estrutura{
-  justify-content:flex-end;
-}
+/* .nav-estrutura{
+  justify-content
+  
+} */
 .menu-nav{
   display:flex;
-  justify-content:space-between;
+  justify-content:flex-end;
 }
  

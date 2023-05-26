@@ -4,6 +4,7 @@
 .tab-style{
     position:static !important;
     width: 100% !important;
+    background-color: rgba(18, 83, 204, 0.411) !important;
 }
 .labol-01{
     display:flex;

@@ -1,5 +1,8 @@
 {
-    "recommendations": [
-        "pmneo.tsimporter"
-    ]
+  "recommendations": [
+    "pmneo.tsimporter",
+    "ms-ceintl.vscode-language-pack-pt-br",
+    "blackboxapp.blackbox",
+    "formulahendry.auto-complete-tag"
+  ]
 }

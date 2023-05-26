@@ -1,17 +1,33 @@
 .titulo{
-  color:#628fe2ec;
+  color:#080c14ec;
   text-align: center;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace !important;
   
+}
+.boasvindas{
+  padding:2rem;
+  background-color: whitesmoke;
+}
+.botoes{
+  display:flex;
+  justify-content:center;
+  margin-top: 30px;
+  margin-left: 200px;
+  background-color: rgba(0, 0, 0, 0.459);
+  max-width: 300px;
+}
+.botoes-color{
+  color: blanchedalmond !important;
 }
 .gridconf{
   direction:row ;
   justify-content: center;
   align-items:center;
   min-height:100vh;
+  margin-top: 150px;
 }
-.gradient-home {
+/*.gradient-home {
   --size: 400px;
   --speed: 10s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
@@ -21,15 +37,11 @@
   background-image: linear-gradient(rgba(55, 235, 169, 0.85) , #5b37eb );
   animation: rotate var(--speed) var(--easing) infinite alternate;
   border-radius: 70% 80% 70% 50%/30% 50% 40% 90%;
-}
+}*/
 .imag-home{
-  background-image: url("https://wallpapercave.com/wp/wp4676582.jpg");
+  background-image: url("https://images8.alphacoders.com/484/thumb-1920-484717.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 500px;
-  height: 500px;
-  border-radius: 20px;
-  margin-right: 10px;
   box-shadow: 1px 3px 50px #628fe29c;
 }

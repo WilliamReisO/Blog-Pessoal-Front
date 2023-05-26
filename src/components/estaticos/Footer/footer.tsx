@@ -1,46 +1,47 @@
 import React from 'react';
 import { Grid , Box , Typography} from '@material-ui/core';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { GitHub} from '@mui/icons-material';
 import './footer.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function Footer(){
+   
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  ) ; 
+
+  var footerComponent;
+
+  if( token !== ""){
+    footerComponent =  
+    <footer className='footer'>
+    <Grid container className='gridPrin'>
+      <Grid item xs={4} className='box1'>
+        <Box className='box1'>
+          <Typography>Feito com:</Typography>
+          
+          <Typography >React / MUI</Typography>
+         
+        </Box>
+      </Grid>
+      <Grid item xs={4} className='gridSec'>
+        <Box className='redes' >
+          <GitHub fontSize='inherit' className='iconeInd' />
+          <LinkedInIcon fontSize='inherit' className='iconeInd' />
+        </Box>
+      </Grid>
+      <Grid item xs={4} className='gridSec'>
+        <Typography variant='h5'>Em parceria com: Generation Brasil</Typography>
+      </Grid>
+    </Grid>
+  </footer>
+  }
         return (
-            <>
-                <Grid container>
-                    <Grid alignItems="center" item xs={12}>
-                        <Box className='box1'>
-                            <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Typography variant="h4" gutterBottom className='texto'>
-                                    Entre em contato comigo
-                                </Typography>
-                            </Box>
-                            <Box display="flex" alignItems="center" justifyContent="center">
-                                <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                    <FacebookIcon className='redes'/>
-                                </a>
-                                <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                    <InstagramIcon className='redes'/>
-                                </a>
-                                <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                                    <LinkedInIcon className='redes'/>
-                                </a>
-                            </Box>
-                        </Box>
-                        <Box className='box2'>
-                            <Box paddingTop={1}>
-                                <Typography variant="subtitle2" gutterBottom className='texto' >© 2023 Copyright:</Typography>
-                            </Box>
-                            <Box>
-                                <a target="_blank" href="https://brasil.generation.org">
-                                    <Typography variant="subtitle2" gutterBottom className='texto'>brasil.generation.org</Typography>
-                                </a>
-                            </Box>
-                        </Box>
-                    </Grid>
-                </Grid>
-            </>
+         <>
+         {footerComponent}
+         </>
         )
 }
 export default Footer;

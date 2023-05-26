@@ -1,0 +1,17 @@
+.topo{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    padding: 2rem;
+    background-color: rgba(245, 245, 245, 0.508);
+}
+.form{
+    color: white;
+    border-radius: 5px;
+}
+.textTema{
+    color:rgb(0, 60, 128);
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+}

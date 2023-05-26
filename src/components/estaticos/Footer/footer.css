@@ -1,27 +1,26 @@
 .box1{
-background-color:rgba(63, 63, 221, 0.771);
-height:120px ;
-display:flex;
-align-Items:center;
-justify-Content:center;
-}
-.redes{
-font-size: 60px !important;
-color: white;
-}
-.box2{
-    display: flex;
-    background-color: rgba(63, 63, 221, 0.771);
-    height: 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     align-items: center;
 }
+.gridPrin{
+    align-items: center;
+}
+.gridSec{
+    display:flex;
+    justify-content:center;
+}
+.redes{
+    display: flex;
+    gap: 2px;;
+    align-items:center;
+}
+
 .texto{
     color: white;
     align-items: center 
 }
-.footer-style{
-    direction: row;
-    justify-Content:center;
-    align-Items:center;
-    width: 1230px!important;
+.footer{
+    background-color: rgba(38, 95, 201, 0.432);
 }
