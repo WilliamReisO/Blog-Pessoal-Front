@@ -18,11 +18,11 @@ function Navbar() {
         alert('usuario deslogado')
         navegate('/login');
         }
-
-        var navbarComponet;
+        
+        var navbarComponent;
 
         if(token !== ""){
-            navbarComponet = 
+            navbarComponent = 
             <AppBar className='navbar'>
             <Toolbar variant='dense'>
                 
@@ -83,7 +83,7 @@ function Navbar() {
 
     return (
      <>
-     {navbarComponet}
+     {navbarComponent}
      </>   
     )
 }
