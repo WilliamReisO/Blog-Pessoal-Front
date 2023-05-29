@@ -1,7 +1,6 @@
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { Tema } from '../../../models/Tema';
 import { Postagem } from "../../../models/Postagem";
 import { buscar, buscarId, post, put } from '../../../service/Service';
@@ -9,6 +8,8 @@ import'./CadastroPost.css'
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/action";
+import Usuario from '../../../models/Usuario';
+import { toast } from "react-toastify";
 
 
 function CadastroPost() {
@@ -16,6 +17,7 @@ function CadastroPost() {
     let navigate = useNavigate();
     const dispach = useDispatch();
     const { id } = useParams<{ id: string }>();
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
       ) ; 
@@ -30,10 +32,28 @@ function CadastroPost() {
         usuario : null,
     });
 
+    const usuarioId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
+    )
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +usuarioId,
+        nome:'',
+        usuario:'',
+        senha:'',
+        foto:'',
+    })
+
     useEffect(() => {
         if (token === '') {
             dispach(addToken(""))
-            alert('vc precisa estar logado')
+            toast.error('vc precisa estar logado',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            })
             navigate('/login')
         }
     }, [token])
@@ -48,9 +68,10 @@ function CadastroPost() {
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario // adiciona o usuario dentro da postagem que está sendo enc=viada para o backend
         })
-    }, [tema])
+    }, [tema]);
 
     useEffect(() => {
         getTemas()
@@ -70,7 +91,14 @@ function CadastroPost() {
 
             if (error.toString().contains('403')) {
                 dispach(addToken(''));
-                alert('Token expirado, logue novamente');
+                toast.error('Token expirado, logue novamente' ,{
+                    position:'top-right',
+                    autoClose:2000,
+                    closeOnClick:true,
+                    pauseOnHover:false,
+                    theme:"colored",
+                    progress:undefined,
+                });
                 navigate('/login');
             }
         }
@@ -103,10 +131,26 @@ function CadastroPost() {
                         Authorization: token
                     },
                 });
-                alert('Postagem atualizada')
+                toast.success('Postagem atualizada',{  
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            }
+                )
                 navigate('/postagens')
             } catch (error) {
-                alert('Erro ao atualizar postagem')
+                toast.error('Erro ao atualizar postagem',{
+                    position:'top-right',
+                    autoClose:2000,
+                    closeOnClick:true,
+                    pauseOnHover:false,
+                    theme:"colored",
+                    progress:undefined,
+                }
+                )
             }
         } else {
             try {
@@ -115,11 +159,24 @@ function CadastroPost() {
                         Authorization: token
                     },
                 }),
-                    alert('Postagem criado com sucesso');
+                    toast.success('Postagem criado com sucesso' ,{
+                    position:'top-right',
+                    autoClose:2000,
+                    closeOnClick:true,
+                    pauseOnHover:false,
+                    theme:"colored",
+                    progress:undefined,}
+                    );
                 navigate('/postagens')
             }
             catch (error) {
-                alert('Erro ao criar postagem')
+                toast.error('Erro ao criar postagem',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,})
             }
         }
     }

@@ -8,7 +8,7 @@ import { buscar } from '../../../service/Service';
 import { addToken } from '../../../store/tokens/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-
+import { toast } from 'react-toastify';
 function ListaTema() {
 
     const [temas, setTemas] = useState<Tema[]>([])
@@ -27,7 +27,13 @@ function ListaTema() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O seu token expirou logue novamente')
+                toast.error('O seu token expirou logue novamente' ,{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,})
                 dispach(addToken(""))
                 navigate('/login')
             }
@@ -38,7 +44,14 @@ function ListaTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('vc precisa do login para acessar essa pagina')
+            toast.error('vc precisa do login para acessar essa pagina',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            })
             navigate('/login')
         }
     }, [token])
@@ -53,6 +66,9 @@ function ListaTema() {
 
     return (
         <>
+        {temas.length === 0 ? 
+        <div><span className="loader"></span></div> 
+        : <></> }
             {
                 temas.map(tema => (
                     <Box m={5} >

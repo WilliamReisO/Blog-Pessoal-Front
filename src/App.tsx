@@ -12,16 +12,26 @@ import DeletarPostagem from './components/postagems/deletarPostagem/DeletarPosta
 import DeletarTema from './components/tema/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import Perfil from './components/perfil/Perfil';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/disc/ReactToastify.css';
 
 function App() {
   return (
 <Provider store = {store}>
+  <ToastContainer/>
     <Router>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element=
             {<Login />} />
+
+          <Route path="/login" element=
+            {<Login />} />
+
+          <Route path="/perfil" element=
+            {<Perfil />} />
 
           <Route path="/login" element=
             {<Login />} />

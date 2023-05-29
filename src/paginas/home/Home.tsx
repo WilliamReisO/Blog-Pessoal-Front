@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function Home() {
   const navigate = useNavigate();
@@ -17,7 +18,14 @@ function Home() {
  // o useEffect server para  
 useEffect(() => {
     if (token === '') {
-        alert('vc precisa do login para acessar essa pagina')
+        toast.error('vc precisa do login para acessar essa pagina',{
+          position:'top-right',
+          autoClose:2000,
+          closeOnClick:true,
+          pauseOnHover:false,
+          theme:"colored",
+          progress:undefined,
+        })
         navigate('/login')
         }
 }, [token])  

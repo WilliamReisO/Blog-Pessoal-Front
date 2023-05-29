@@ -12,7 +12,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { buscarId, deleteId } from "../../../service/Service";
 import { Tema } from "../../../models/Tema";
-
+import { toast } from 'react-toastify';
+//
 function DeletarTema() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
@@ -21,7 +22,14 @@ function DeletarTema() {
 
   useEffect(() => {
     if (token === "") {
-      alert("vc precisa estar logado");
+      toast.error("vc precisa estar logado" ,{
+        position:'top-right',
+        autoClose:2000,
+        closeOnClick:true,
+        pauseOnHover:false,
+        theme:"colored",
+        progress:undefined,
+      });
       navigate("/login");
     }
   }, [token]);
@@ -32,6 +40,7 @@ function DeletarTema() {
     }
   }, [id]);
 
+  //
   async function findById(id: string) {
     buscarId(`/temas/${id}`, setTema, {
       headers: {
@@ -39,6 +48,7 @@ function DeletarTema() {
       },
     });
   }
+  //
   function sim() {
     navigate(`/temas`)
     deleteId(`/tema/${id}`, {
@@ -46,8 +56,16 @@ function DeletarTema() {
         Authorization: token,
       },
     })
-    alert('Tema deletado com sucesso');
+    toast.success('Tema deletado com sucesso',{
+      position:'top-right',
+      autoClose:2000,
+      closeOnClick:true,
+      pauseOnHover:false,
+      theme:"colored",
+      progress:undefined,
+    });
   }
+  //
   function nao() {
     navigate(`/temas`)
   }

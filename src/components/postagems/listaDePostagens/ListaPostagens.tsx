@@ -6,6 +6,7 @@ import { Postagem } from '../../../models/Postagem';
 import { buscar } from "../../../service/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function ListaPostagem() {
 
@@ -20,7 +21,14 @@ function ListaPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('vc precisa do login para acessar essa pagina')
+      toast.error('vc precisa do login para acessar essa pagina',{
+        position:'top-right',
+        autoClose:2000,
+        closeOnClick:true,
+        pauseOnHover:false,
+        theme:"colored",
+        progress:undefined,
+      })
       navigate('/login')
     }
   }, [token])
@@ -46,7 +54,9 @@ function ListaPostagem() {
             <Card variant="outlined" className="card-Decoration">
               <CardContent>
                 <Typography className="title" >
-                  Postagens
+                  <Typography variant="body2" component="p">
+                    posts do : {postagem.usuario?.nome}
+                  </Typography>
                 </Typography>
                 <Typography variant="h5" component="h2" className="title">
                   Título

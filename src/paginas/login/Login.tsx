@@ -5,7 +5,8 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { login } from '../../service/Service';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/action';
+import { addId, addToken } from '../../store/tokens/action';
+import { toast } from 'react-toastify';
 
 function Login() {
   // cria a variavel para navegação interna pela rota
@@ -16,6 +17,14 @@ function Login() {
 
   // cria um estado de controle para o usuário preencher os dados de login
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    token: '',
+  });
+  const [respUsuarioLogin, setRespUsuarioLogin] = useState<UsuarioLogin>({
     id: 0,
     nome: '',
     usuario: '',
@@ -37,10 +46,24 @@ function Login() {
     // previne que o formulario atualize a pagina
     event.preventDefault();
     try {
-      await login('/usuarios/logar', usuarioLogin, setToken);
-      alert('Usuario logado com sucesso');
+      await login('/usuarios/logar', usuarioLogin,setRespUsuarioLogin);
+      toast.error('Usuario logado com sucesso',{
+        position:'top-right',
+        autoClose:2000,
+        closeOnClick:true,
+        pauseOnHover:false,
+        theme:"colored",
+        progress:undefined,
+      })
     } catch (error) {
-      alert('Usuário e/ou senha inválidos');
+      toast.error('Usuário e/ou senha inválidos',{
+        position:'top-right',
+        autoClose:2000,
+        closeOnClick:true,
+        pauseOnHover:false,
+        theme:"colored",
+        progress:undefined,
+      });
     }
   }
 
@@ -51,6 +74,14 @@ function Login() {
       navigate('/home');
     }
   }, [token]);
+
+  useEffect(() => {
+    if(respUsuarioLogin.token !== ''){
+      dispatch(addToken(respUsuarioLogin.token))
+      dispatch(addId(respUsuarioLogin.id.toString()))
+      navigate('/home')
+    }
+  },[respUsuarioLogin.token])
 
   return (
    
@@ -73,9 +104,12 @@ function Login() {
           fullWidth />
         </Box>
         <Box className="form-input">
-          <TextField  value ={usuarioLogin.senha} 
+          <TextField  
+          value ={usuarioLogin.senha} 
           onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} 
           id ='senha' 
+          error={usuarioLogin.senha.length <8 && usuarioLogin.senha.length > 0}
+          helperText='a senha tem que ter pelo menos 8 caracterie'
           variant="standard" 
           name='senha' 
           label="Senha" 

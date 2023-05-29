@@ -7,6 +7,7 @@ import { buscarId, post, put } from "../../../service/Service";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/action";
+import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
@@ -25,7 +26,14 @@ function CadastroTema() {
     useEffect(() => {
         if (token === '') {
             dispache(addToken(""))
-            alert('vc precisa estar logado')
+            toast.error('vc precisa estar logado',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            })
             navigate('/login')
         }
     }, [token])
@@ -64,14 +72,28 @@ function CadastroTema() {
                     Authorization: token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            toast.success('Tema Atualizado com sucesso',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            });
         } else {
             post('/temas', tema, setTema, {
                 headers: {
                     Authorization: token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            toast.success('Tema cadastrado com sucesso',{
+                position:'top-right',
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:false,
+                theme:"colored",
+                progress:undefined,
+            });
         }
         back()
     }
