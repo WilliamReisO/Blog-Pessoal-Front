@@ -8,8 +8,8 @@
 }
 .labol-01{
     display:flex;
-    flex-Wrap: wrap;
-    justify-Content:center;
+    flex-wrap: wrap;
+    justify-content:center;
     width: 1225px !important;
 }
 

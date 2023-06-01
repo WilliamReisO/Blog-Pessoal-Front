@@ -26,7 +26,7 @@
 
 .texto{
   display:flex;
-  margin-Top:2rem;
+  margin-top:2rem;
   align-items: center;
   color: #07242e;
 }
@@ -41,7 +41,7 @@
 .form-text{
   display:flex;
   justify-content :center ;
-  margin-Top:2rem;
+  margin-top:2rem;
   align-items: center;
   text-transform: uppercase;
   color: #18586fda;;
