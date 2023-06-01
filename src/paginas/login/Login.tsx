@@ -47,26 +47,31 @@ function Login() {
     event.preventDefault();
     try {
       await login('/usuarios/logar', usuarioLogin, setRespUsuarioLogin);
-      toast.error('Usuario logado com sucesso',{
-        position:'top-right',
-        autoClose:2000,
-        closeOnClick:true,
-        pauseOnHover:false,
-        theme:"colored",
-        progress:undefined,
-      });
+      // alert('Usuario logado com sucesso');
+      toast.success('Usuário logado com sucesso', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } catch (error) {
+      // alert('Usuário e/ou senha inválidos');
       toast.error('Usuário e/ou senha inválidos', {
-        position:'top-right',
-        autoClose:2000,
-        closeOnClick:true,
-        pauseOnHover:false,
-        theme:"colored",
-        progress:undefined,
-      });
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
-
   // Efeito que fica de olho no token, e quando chega algo diferente de vazio, navega o usuario pra home
   useEffect(() => {
     if (token !== '') {
@@ -107,8 +112,8 @@ function Login() {
             value ={usuarioLogin.senha} 
             onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} 
             id ='senha' 
-            error={usuarioLogin.senha.length <8 && usuarioLogin.senha.length > 0}
-            helperText='a senha tem que ter pelo menos 8 caracterie'
+            error={usuarioLogin.senha.length < 8 && usuarioLogin.senha.length > 0}
+            helperText={usuarioLogin.senha.length < 8 && usuarioLogin.senha.length > 0 ? 'Tem que ter mais de 8 caracteres' : ''}
             variant="standard" 
             name='senha' 
             label="Senha" 

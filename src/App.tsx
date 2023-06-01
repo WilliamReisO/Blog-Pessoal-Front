@@ -12,8 +12,9 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Perfil from './components/perfil/Perfil';
 import {ToastContainer} from 'react-toastify';
-import Footer from './components/estaticos/footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/estaticos/navBar/NavBar';
+import Footer from './components/estaticos/footer/Footer';
 
 function App() {
   return (
