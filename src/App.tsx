@@ -20,32 +20,32 @@ function App() {
 <Provider store = {store}>
   <ToastContainer/>
     <Router>
-      <Navbar />
+      <Navbar/>
       <div style={{ minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element=
-            {<Login />} />
+            {<Login/>} />
 
           <Route path="/login" element=
-            {<Login />} />
+            {<Login/>} />
 
           <Route path="/perfil" element=
-            {<Perfil />} />
+            {<Perfil/>} />
 
           <Route path="/login" element=
-            {<Login />} />
+            {<Login/>} />
 
           <Route path="/home" element=
-            {<Home />} />
+            {<Home/>} />
   
           <Route path="/temas" element=
-            {<ListaTema />} />
+            {<ListaTema/>} />
 
           <Route path="/postagens" element=
-            {<ListaPostagem />} />
+            {<ListaPostagem/>} />
 
           <Route path="/cadastroUsuario" element=
-            {<CadastroUsuario />} />
+            {<CadastroUsuario/>} />
 
           <Route path="/formulariopostagem" element=
           {<CadastroPost/>} />
@@ -68,7 +68,7 @@ function App() {
         </Routes>
          
       </div>
-      <Footer />
+      <Footer/>
     </Router>
   </Provider>
   )
