@@ -1,19 +1,12 @@
-/*posição pagina login*/
-.login{
-  align-Items:center;
-  justify-Content:center;
-  min-Height:100vh;
-}
 .card{
   border-radius: 50px;
-  background:#ebf1eb71;
+  background:#ebf1eb36;
   padding: 20px;
   display: flex;
   margin-left: 350px;
   margin-top: 200px;
   align-items: center;
   box-shadow: 2px 5px 20px #77aeeab9;
- 
 }
 
 .button {
@@ -21,6 +14,21 @@
 }
 .button:hover {
   background: #18586fda;
+}
+
+
+.button-cadastro{
+  text-decoration: none;
+  background-color: #07242e74;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.texto{
+  display:flex;
+  margin-Top:2rem;
+  align-items: center;
+  color: #07242e;
 }
 
 .form{
@@ -31,6 +39,9 @@
   padding: auto;
 }
 .form-text{
+  display:flex;
+  justify-content :center ;
+  margin-Top:2rem;
   align-items: center;
   text-transform: uppercase;
   color: #18586fda;;
@@ -40,6 +51,8 @@
   width: 500px;
   padding: 1rem;
 }
+
+
 
 .contained{
   background-image: url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -54,8 +67,14 @@
   /* calc é uma função que irá calcular e retornar um valor */
   min-height: calc(80vh - 40px); /* 100vh - 48px que é a altura do NavBar/Menu */
 }
-
-/*background gradient */
+.imag-login{
+  background-image: url("/public/15656927981_3b5b0f8d98_o.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* background gradient
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -63,7 +82,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 /*.gradient-login {
   --size: 400px;
   --speed: 10s;
@@ -75,11 +94,5 @@
   animation: rotate var(--speed) var(--easing) infinite alternate;
   border-radius: 70% 80% 70% 50%/30% 50% 40% 90%;
 }*/
-.imag-login{
-  background-image: url("/public/15656927981_3b5b0f8d98_o.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 1px 3px 50px #628fe29c;
-}
+
+

@@ -14,7 +14,8 @@ function Footer(){
 
   var footerComponent;
 
-  if( token !== ""){
+  if( token !== "")
+  {
     footerComponent =  
     <footer className='footer'>
     <Grid container className='gridPrin'>

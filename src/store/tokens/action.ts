@@ -1,11 +1,11 @@
-export type Action = {type:"ADD_TOKEN" | "ADD_ID"; payload:string};
+export type Action = {type:"ADD_TOKEN" | "ADD_ID" | "REMOVE_ITEM"; payload:string};
 
 export const addToken = (token:string): Action =>({
     type:"ADD_TOKEN",
     payload:token,
 })
 
-// pehar o id do usuario na hora do login
+// pegar o id do usuario na hora do login
 export const addId = (id:string): Action => ({
     type : "ADD_ID",
     payload:id

@@ -1,7 +1,7 @@
 
 .texto2{
     font-weight:bold !important;
-    color:#7380e9;
+    color:#4b5eeb;
     margin-bottom: 20px !important;
 }
 .button-01 {
@@ -25,7 +25,7 @@
   background:#a8c5ed5a;
   padding: 2rem;
   width: 400px;
-  box-shadow: 2px 5px 20px #b9c0f7;
+  box-shadow: 2px 5px 20px #dadef7a5;
   margin-top: 40px;
     
   }
@@ -34,13 +34,19 @@
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 10px;
- 
+  }
+  .formato:hover{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 10px;
   }
   .formato-card{
+    margin-top: 30px;
     direction:row; 
     justify-content: center;
     align-items:center;
-    margin-left:250px;
+  
   }
   .gradient-cadastro{
     --size: 400px;

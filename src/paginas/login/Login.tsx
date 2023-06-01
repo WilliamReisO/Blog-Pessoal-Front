@@ -46,7 +46,7 @@ function Login() {
     // previne que o formulario atualize a pagina
     event.preventDefault();
     try {
-      await login('/usuarios/logar', usuarioLogin,setRespUsuarioLogin);
+      await login('/usuarios/logar', usuarioLogin, setRespUsuarioLogin);
       toast.error('Usuario logado com sucesso',{
         position:'top-right',
         autoClose:2000,
@@ -54,9 +54,9 @@ function Login() {
         pauseOnHover:false,
         theme:"colored",
         progress:undefined,
-      })
+      });
     } catch (error) {
-      toast.error('Usuário e/ou senha inválidos',{
+      toast.error('Usuário e/ou senha inválidos', {
         position:'top-right',
         autoClose:2000,
         closeOnClick:true,
@@ -70,8 +70,8 @@ function Login() {
   // Efeito que fica de olho no token, e quando chega algo diferente de vazio, navega o usuario pra home
   useEffect(() => {
     if (token !== '') {
-      dispatch(addToken(token));
-      navigate('/home');
+      //dispatch(addToken(token));
+      //navigate('/home');
     }
   }, [token]);
 
@@ -80,62 +80,64 @@ function Login() {
       dispatch(addToken(respUsuarioLogin.token))
       dispatch(addId(respUsuarioLogin.id.toString()))
       navigate('/home')
+      console.log({respUsuarioLogin})
     }
   },[respUsuarioLogin.token])
 
   return (
    
-  <Grid
-    container
-    
-    >
+  <Grid container alignItems={'center'}>
     <Box className="card">
       <form className="form" onSubmit={enviar} >
         <Typography variant="h3"className="form-text">
           Entrar
         </Typography>
-        <Box className="form-input">
-          <TextField value={usuarioLogin.usuario} 
-          onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)}  
-          id='usuario' 
-          variant="standard" 
-          name='usuario' 
-          label="Nome de Usuario" 
-          fullWidth />
-        </Box>
-        <Box className="form-input">
-          <TextField  
-          value ={usuarioLogin.senha} 
-          onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} 
-          id ='senha' 
-          error={usuarioLogin.senha.length <8 && usuarioLogin.senha.length > 0}
-          helperText='a senha tem que ter pelo menos 8 caracterie'
-          variant="standard" 
-          name='senha' 
-          label="Senha" 
-          type='password' 
-          fullWidth />
+          <Box className="form-input">
+            <TextField value={usuarioLogin.usuario} 
+            onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)}  
+            id='usuario' 
+            variant="standard" 
+            name='usuario' 
+            label="Nome de Usuario" 
+            fullWidth />
+          </Box>
 
-        </Box>
-        <Button variant='contained' fullWidth className='button' type='submit'>
-          Logar
-        </Button>
-     
-       <Box display={'flex'} justifyContent={'center'} marginTop={2}>
-        <Typography variant = 'subtitle1' gutterBottom align='center'>
-          Não tem uma conta ?
-        </Typography>
+          <Box className="form-input">
+            <TextField  
+            value ={usuarioLogin.senha} 
+            onChange={(event:ChangeEvent<HTMLInputElement>) => updateModel(event)} 
+            id ='senha' 
+            error={usuarioLogin.senha.length <8 && usuarioLogin.senha.length > 0}
+            helperText='a senha tem que ter pelo menos 8 caracterie'
+            variant="standard" 
+            name='senha' 
+            label="Senha" 
+            type='password' 
+            fullWidth />
+          </Box>
+        
+          <Button variant='contained' fullWidth className='button' type='submit'>
+            Logar
+          </Button>
+          
+        <Box >
+          <Box className='texto'>
+          <Typography variant = 'subtitle1' >
+            Não tem uma conta ?
+          </Typography>
+          </Box>
 
-        <Typography variant='subtitle2' gutterBottom className='text-cadastro'>
-          <Link to="/cadastroUsuario">Cadastre-se</Link>
-        </Typography>
+          <Box className='button-cadastro'>
+          <Typography variant='subtitle2' gutterBottom >
+              <Link to="/cadastroUsuario">
+              <Button> Cadastre-se </Button> 
+              </Link>
+          </Typography>
+        </Box>
       </Box>
       </form>
     </Box>
-
   </Grid>
 );
 }
-
-
 export default Login

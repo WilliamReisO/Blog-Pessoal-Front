@@ -30,7 +30,8 @@ function Navbar() {
         
         var navbarComponent;
 
-        if(token !== ""){
+        if(token !== "")
+        {
             navbarComponent = 
             <AppBar className='navbar'>
             <Toolbar variant='dense'>

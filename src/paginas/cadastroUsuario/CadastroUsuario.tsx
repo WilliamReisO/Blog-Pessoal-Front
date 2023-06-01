@@ -85,6 +85,7 @@ function CadastroUsuario() {
             <Typography variant="h4" align="center" textTransform={'uppercase'} className="texto2"  >
               Cadastrar
             </Typography>
+            
             <Box className="formato">
               <TextField value={usuario.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} id='foto' label="Foto" name='foto' variant="outlined"  fullWidth />
             </Box >

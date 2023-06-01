@@ -5,7 +5,6 @@ import Usuario from "../../models/Usuario";
 import { buscarId } from "../../service/Service";
 import { Avatar, Container, Grid } from "@mui/material";
 import { Typography } from '@material-ui/core';
-import { Postagem } from '../../models/Postagem';
 
 
 function Perfil(){
