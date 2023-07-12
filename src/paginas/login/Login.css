@@ -1,63 +1,69 @@
-.card{
+.formato-card-login {
+  margin-top: 150px;
+  direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
   border-radius: 50px;
-  background:#ebf1eb36;
+  background: #ebf1eb36;
   padding: 20px;
   display: flex;
-  margin-left: 350px;
-  margin-top: 200px;
-  align-items: center;
   box-shadow: 2px 5px 20px #77aeeab9;
 }
 
 .button {
   background: #18586fda !important;
 }
+
 .button:hover {
   background: #18586fda;
 }
 
 
-.button-cadastro{
+.button-cadastro {
   text-decoration: none;
   background-color: #07242e74;
   border-radius: 8px;
   text-align: center;
 }
 
-.texto{
-  display:flex;
-  margin-top:2rem;
+.texto {
+  display: flex;
+  margin-top: 2rem;
   align-items: center;
   color: #07242e;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
   padding: auto;
 }
-.form-text{
-  display:flex;
-  justify-content :center ;
-  margin-top:2rem;
+
+.form-text {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
   align-items: center;
   text-transform: uppercase;
-  color: #18586fda;;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  color: #18586fda;
+  ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 }
-.form-input{
+
+.form-input {
   width: 500px;
   padding: 1rem;
 }
 
-
-
-.contained{
+.contained {
   background-image: url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   border-radius: 20px;
   padding: 50px;
   align-items: center;
@@ -65,15 +71,161 @@
   margin-top: 80px;
   box-shadow: 1px 3px 50px #62e27eb9;
   /* calc é uma função que irá calcular e retornar um valor */
-  min-height: calc(80vh - 40px); /* 100vh - 48px que é a altura do NavBar/Menu */
+  min-height: calc(80vh - 40px);
+  /* 100vh - 48px que é a altura do NavBar/Menu */
 }
-.imag-login{
+
+.imag-login {
   background-image: url("/public/15656927981_3b5b0f8d98_o.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/* Estilização dos botões de login, cadastro e recuperação senha*/
+
+@media screen and (max-width: 980px) {
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 180px;
+    margin-top: 300px;
+  }
+
+  .form{
+    width: 600px;
+    height: 400px;
+   }
+
+}
+@media screen and (max-width: 920px) {
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 180px;
+    margin-top: 400px;
+  }
+
+  .form{
+    width: 620px;
+    height: 400px;
+   }
+   .form-input {
+    width: 580px;
+    padding: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 180px;
+    margin-top: 300px;
+  }
+  .form{
+    width: 500px;
+    height: 380px;
+   }
+}
+@media screen and (max-width: 830px) {
+
+  .formato-card-login {
+    margin-top: 300px;
+  }
+  .form{
+    width: 600px;
+    height: 380px;
+   }
+   .form-input {
+    width: 580px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 120px;
+    margin-top: 150px;
+  }
+
+  .form{
+    width: 400px;
+    height: 380px;
+    
+   }
+   .form-input {
+    width: 400px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 20px;
+  }
+
+  .form{
+    width: 300px;
+    height: 400px;
+   }
+
+}
+
+@media screen and (max-width: 415px) {
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 20px;
+    margin-top: 180px;
+  }
+
+ .form{
+  width: 300px;
+  height: 360px;
+ }
+ .form-input {
+  width: 300px;
+  padding: 1rem;
+}
+}
+
+@media screen and (max-width: 380px) {
+
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 45px;
+    margin-top: 120px;
+  }
+  .form{
+    width: 280px;
+    height: 380px;
+   }
+   .form-input {
+    width: 280px;
+    padding: 1rem;
+  }
+
+}
+@media screen and (max-width: 370px) {
+
+  .formato-card-login {
+    max-width: 40vh;
+    margin-left: 25px;
+    margin-top: 120px;
+  }
+  .form{
+    width: 280px;
+    height: 380px;
+   }
+   .form-input {
+    width: 280px;
+    padding: 1rem;
+  }
+
+}
+
 /* background gradient
 @keyframes rotate {
   0% {
@@ -94,5 +246,3 @@
   animation: rotate var(--speed) var(--easing) infinite alternate;
   border-radius: 70% 80% 70% 50%/30% 50% 40% 90%;
 }*/
-
-

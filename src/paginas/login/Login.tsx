@@ -91,7 +91,7 @@ function Login() {
 
   return (
    
-  <Grid container alignItems={'center'}>
+  <Grid container className="formato-card-login">
     <Box className="card">
       <form className="form" onSubmit={enviar} >
         <Typography variant="h3"className="form-text">
